@@ -1,0 +1,15 @@
+name: 'Contentful backup'
+description: 'Creates a new backup of Contentful content'
+inputs:
+  contentful-space-id:
+    description: 'The ID of the space to back up'
+    required: true
+    default: ''
+  contentful-content-management-token:
+    description: The Contentful management token secret
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.contentful-space-id }}
