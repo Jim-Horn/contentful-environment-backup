@@ -1,3 +1,6 @@
 .idea
 .secrets
 .env.*
+/data/environments.txt
+/data/envs.json
+
