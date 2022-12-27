@@ -2,7 +2,7 @@
 
 This workflow can be used to create periodic "backup" copies of a Contentful `master` environment. Such backups can be leveraged to quickly roll back to previous stable content, should the need arise, or for testing various migrations before committing to `master`. 
 
-Example backup name: auto_2022-12-27_21-18-01_BAK
+Example backup name: `auto_2022-12-27_21-18-01_BAK`
 
 The naming convention for the environments is derived from a) the `backup-name-prefix` passed in ("auto" in the above example), b) the date the workflow is run, and finally, c) the backup suffix, which is always "BAK"; all separated by underscores
 ## Inputs
