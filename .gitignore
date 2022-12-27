@@ -3,4 +3,5 @@
 .env.*
 /data/envs.txt
 /data/envs.json
-
+/coverage
+/node_modules
