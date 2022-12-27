@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 function getDateString(theDate) {
-    // const currentDate = new Date();
     let returnString = theDate.getFullYear();
     returnString += "-";
     returnString += pad(theDate.getMonth() + 1);

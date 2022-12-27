@@ -3,7 +3,7 @@ import executeCommand from "./executeCommand.js";
 
 function deleteEnv(envToDelete, accessString) {
     try {
-        const deleteOldBackupCommand = `contentful space environment delete --environment-id ${envToDelete} ${accessString}`;
+        const deleteOldBackupCommand = `contentful space environment delete --environment-id ${envToDelete.id} ${accessString}`;
         console.log(`Delete command: ${deleteOldBackupCommand}`);
         executeCommand(deleteOldBackupCommand);
     } catch (err) {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import executeCommand from "./executeCommand.js";
 
-function createEnv(accessString, envToCreate) {
+function createEnv(envToCreate, accessString) {
     try {
         const createBackupCommand = `contentful space environment create --name ${envToCreate} --environment-id ${envToCreate} ${accessString}`;
         console.log(`Backup command: ${createBackupCommand}`);
