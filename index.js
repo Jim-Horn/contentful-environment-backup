@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import getAndParseContentfulEnvs from "./utils/getAndParseContentfulEnvs.js";
-import deleteEnv from "./utils/deleteEnv.js";
 import createEnv from "./utils/createEnv.js";
+import deleteEnv from "./utils/deleteEnv.js";
+import getAndParseContentfulEnvs from "./utils/getAndParseContentfulEnvs.js";
 import getBackupName from "./utils/getBackupName.js";
 import getEnvToDelete from "./utils/getEnvToDelete.js";
 
@@ -15,7 +15,7 @@ const accessString = `--management-token ${managementToken} --space-id ${spaceId
 
 const envs = getAndParseContentfulEnvs(accessString);
 
-const envToDelete = getEnvToDelete(envs, deleteNamePrefix);
+const envToDelete = getEnvToDelete(envs, deleteNamePrefix, backupNameSuffix);
 
 envToDelete && deleteEnv(envToDelete, accessString);
 
