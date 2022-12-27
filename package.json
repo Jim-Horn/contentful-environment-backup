@@ -1,3 +1,21 @@
 {
-    "type": "module"
+    "type": "module",
+    "name": "contentful-backup",
+    "description": "This action deletes and creates Contentful environment backups",
+    "version": "0.9.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jim-Horn/cb2.git"
+    },
+    "keywords": [],
+    "author": "Jim Horn",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Jim-Horn/cb2/issues"
+    },
+    "homepage": "https://github.com/Jim-Horn/cb2#readme"
 }
