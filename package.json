@@ -2,7 +2,7 @@
     "type": "module",
     "name": "contentful-backup",
     "description": "This action deletes and creates Contentful environment backups",
-    "version": "0.9.1",
+    "version": "0.9.2",
     "main": "index.js",
     "scripts": {
         "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
