@@ -1,21 +1,18 @@
 on:
-  schedule:
-    # 6PM UTC, Monday through Friday (12PM Central, 1PM Eastern)
-    - cron: '0 18 * * 1-5'
-    - cron: '0 9 * * 3'
-    - cron: '2 9 * * 3'
+  workflow_dispatch
 
 jobs:
   contentful_backup_job:
     runs-on: ubuntu-latest
     name: Contentful backup
     steps:
-      - name: Daily backup
-        if: ${{ github.event.schedule == '0 18 * * 1-5' }}
-        run: echo "running the daily backup"
-      - name: Weekly master backup environment
-        if: ${{ github.event.schedule == '0 9 * * 3' }}
-        run: echo "run weekly backup"
-      - name: Weekly release environment
-        if: ${{ github.event.schedule == '2 9 * * 3' }}
-        run: echo "Weekly release environment"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Back up Contentful environment
+        uses: ./
+        id: backup
+        with:
+          contentful-content-management-token: ${{secrets.CONTENTFUL_CONTENT_MANAGEMENT_TOKEN}}
+          contentful-space-id: "nrocpvfo0sk3"
+          backup-name-prefix: "auto"
+          delete-name-prefix: "auto"
