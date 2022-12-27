@@ -1,26 +1,28 @@
 #!/usr/bin/env node
 import fs from "fs";
-import { execSync } from "child_process";
+import executeCommand from "./executeCommand.js";
 
 const DATA_DIR = "data";
 
-function getAndParseContentfulEnvironments() {
-    getContentfulEnvironments();
+function getAndParseContentfulEnvs(accessString) {
+    getContentfulEnvs();
 
     const results = createEnvironmentsObj();
 
     writeJsonFile(results);
 
-    function getContentfulEnvironments() {
+    return results;
+
+    function getContentfulEnvs() {
         executeCommand(
-            `contentful space environment list > ${DATA_DIR}/environments.txt`
+            `contentful space environment list ${accessString} > ${DATA_DIR}/envs.txt`
         );
     }
 
     function createEnvironmentsObj() {
         const results = [];
         let dataArr = cleanData(
-            fs.readFileSync(`${DATA_DIR}/environments.txt`, {
+            fs.readFileSync(`${DATA_DIR}/envs.txt`, {
                 encoding: "utf8",
                 flag: "r",
             })
@@ -55,10 +57,6 @@ function getAndParseContentfulEnvironments() {
             }
         );
     }
-
-    function executeCommand(cmd) {
-        return execSync(cmd).toString();
-    }
 }
 
-export default getAndParseContentfulEnvironments;
+export default getAndParseContentfulEnvs;
