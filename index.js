@@ -5,17 +5,18 @@ import getAndParseContentfulEnvs from "./utils/getAndParseContentfulEnvs.js";
 import getBackupName from "./utils/getBackupName.js";
 import getEnvToDelete from "./utils/getEnvToDelete.js";
 
-const backupNameSuffix = "BAK"; // hard-coded
-const backupNamePrefix = "auto"; // param
-const deleteNamePrefix = "auto"; // param
+const backupNameSuffix = "BAK";
+const backupNamePrefix = process.env["INPUT_BACKUP-NAME-PREFIX"];
+const deleteNamePrefix = process.env["INPUT_DELETE-NAME-PREFIX"];
 
-const managementToken = ""; // secret
+const managementToken =
+    process.env["INPUT_CONTENTFUL-CONTENT-MANAGEMENT-TOKEN"];
 if (!managementToken) {
     console.error(`MISSING MANAGEMENT TOKEN: See README`);
     process.exit(1);
 }
 
-const spaceId = "nrocpvfo0sk3"; // param
+const spaceId = process.env["INPUT_CONTENTFUL-SPACE-ID"];
 if (!spaceId) {
     console.error(`MISSING SPACE ID: See README`);
     process.exit(1);
