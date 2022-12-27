@@ -1,35 +1,24 @@
 #!/usr/bin/env node
-import { execSync } from 'child_process';
-import getAndParseContentfulEnvironments from './utils/getAndParseContentfulEnvironments.js';
-import getBackupName from './utils/getBackupName.js';
+import getAndParseContentfulEnvs from "./utils/getAndParseContentfulEnvs.js";
+import deleteEnv from "./utils/deleteEnv.js";
+import createEnv from "./utils/createEnv.js";
+import getBackupName from "./utils/getBackupName.js";
+import getEnvToDelete from "./utils/getEnvToDelete.js";
 
-const backupNameExt = 'BAK';
+const backupNameSuffix = "BAK"; // hard-coded
+const backupNamePrefix = "auto"; // param
+const deleteNamePrefix = "auto"; // param
 
-function executeCommand(cmd) {
-    return execSync(cmd).toString();
-}
-
-getAndParseContentfulEnvironments();
-// console.log('JSON.stringify(process.env, null, 2): ', JSON.stringify(process.env, null, 2));
-
-// const managementToken = process.env['INPUT_CONTENTFUL-CONTENT-MANAGEMENT-TOKEN'];
-const managementToken = "process.env['INPUT_CONTENTFUL-CONTENT-MANAGEMENT-TOKEN']";
-// const spaceId = process.env['INPUT_CONTENTFUL-SPACE-ID'];
-const spaceId = "process.env['INPUT_CONTENTFUL-SPACE-ID']";
+const managementToken = ""; // secret
+const spaceId = "nrocpvfo0sk3"; // param
 const accessString = `--management-token ${managementToken} --space-id ${spaceId}`;
 
-try {
-    const deleteOldBackupCommand = `contentful space environment delete --environment-id AUTOMATIC-BACKUP ${accessString}`;
-    console.log(`Delete command: ${deleteOldBackupCommand}`);
-    // executeCommand(deleteOldBackupCommand);
-}catch (err){
-    console.log(err)
-}
+const envs = getAndParseContentfulEnvs(accessString);
 
-try {
-    const createBackupCommand = `contentful space environment create --name ${getBackupName(backupNameExt)} --environment-id AUTOMATIC-BACKUP ${accessString}`;
-    console.log(`Backup command: ${createBackupCommand}`);
-    // executeCommand(createBackupCommand);
-}catch (err){
-    console.log(err)
-}
+const envToDelete = getEnvToDelete(envs, deleteNamePrefix);
+
+envToDelete && deleteEnv(envToDelete, accessString);
+
+const envToCreate = getBackupName(backupNamePrefix, new Date(), backupNameSuffix);
+
+createEnv(envToCreate, accessString);
