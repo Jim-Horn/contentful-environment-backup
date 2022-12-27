@@ -1,5 +1,7 @@
 FROM node:16-alpine3.16
 
+COPY package.json /package.json
+
 COPY index.js /index.js
 RUN chmod +x index.js
 
