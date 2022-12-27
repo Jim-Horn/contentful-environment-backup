@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 import getDateString from "./getDateString.js";
 
-function getBackupName(backupNameExt) {
-    return `${getDateString(new Date())}_${backupNameExt}`;
+function getBackupName(backupNamePrefix, backupNameSuffix) {
+    return `${backupNamePrefix}_${getDateString(
+        new Date()
+    )}_${backupNameSuffix}`;
 }
 
 export default getBackupName;
