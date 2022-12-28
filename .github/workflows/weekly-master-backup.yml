@@ -1,4 +1,4 @@
-Name: Weekday master Contentful backup
+name: Weekday master Contentful backup
 on:
     schedule:
         - cron: "0 14 * * 3"

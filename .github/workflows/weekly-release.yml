@@ -1,4 +1,4 @@
-Name: Weekday release Contentful backup
+name: Weekday release Contentful backup
 on:
     schedule:
         - cron: "2 14 * * 3"

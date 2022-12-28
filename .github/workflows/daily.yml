@@ -1,7 +1,8 @@
-Name: Weekday daily Contentful backup
+name: Weekday daily Contentful backup
 on:
     schedule:
         - cron: "0 18 * * 1-5"
+    workflow_dispatch
 
 jobs:
     contentful_backup_job:
