@@ -1,0 +1,20 @@
+Name: Weekday release Contentful backup
+on:
+    schedule:
+        - cron: "2 14 * * 3"
+
+jobs:
+    contentful_backup_job:
+        runs-on: ubuntu-latest
+        name: Contentful backup
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Back up Contentful environment
+              uses: ./
+              id: backup
+              with:
+                  contentful-content-management-token: ${{secrets.CONTENTFUL_CONTENT_MANAGEMENT_TOKEN}}
+                  contentful-space-id: "nrocpvfo0sk3"
+                  backup-name-prefix: "weekly-release"
+                  delete-name-prefix: "weekly-release"
