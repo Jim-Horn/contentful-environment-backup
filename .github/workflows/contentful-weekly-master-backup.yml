@@ -1,7 +1,7 @@
-name: Weekly release Contentful backup
+name: Contentful - weekly master backup
 on:
     schedule:
-        - cron: "2 14 * * 3"
+        - cron: "0 14 * * 3"
     workflow_dispatch:
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
               with:
                   contentful-content-management-token: ${{secrets.CONTENTFUL_CONTENT_MANAGEMENT_TOKEN}}
                   contentful-space-id: "nrocpvfo0sk3"
-                  backup-name-prefix: "weekly-release"
-                  delete-name-prefix: "weekly-release"
+                  backup-name-prefix: "weekly-master"
+                  delete-name-prefix: "weekly-master"
