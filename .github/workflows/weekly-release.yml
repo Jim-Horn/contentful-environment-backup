@@ -2,6 +2,7 @@ name: Weekday release Contentful backup
 on:
     schedule:
         - cron: "2 14 * * 3"
+    workflow_dispatch:
 
 jobs:
     contentful_backup_job:
