@@ -1,4 +1,4 @@
-name: Contentful - weekday daily backup
+name: Contentful - weekday backup
 on:
     schedule:
         - cron: "0 18 * * 1-5"
