@@ -9,7 +9,8 @@ The naming convention for the environments is derived from a) the `backup-name-p
 
 **`contentful-space-id`** (required, string): the Space ID of the Contentful space to back up
 
-**`contentful-content-management-token`** (required SECRET, string): the Contentful content management token for the space
+**`contentful-content-management-token`** (required SECRET, string): the Contentful content management token for the space.
+E.G. `CONTENTFUL_CONTENT_MANAGEMENT_TOKEN`
 
 **`backup-name-prefix`** (optional string, alphanumeric): if no `backup-name-prefix` is passed as an argument, no backup will be created
 
