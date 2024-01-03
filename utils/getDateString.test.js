@@ -7,5 +7,5 @@ test('getDateString should properly parse the date', ()=>{expect(
                                                                   )
                                                               )
                                                           ).toBe(
-                                                              "2022-12-27_12-46-18"
+                                                              "2022-12-27_12-46"
                                                           );})

@@ -1,4 +1,4 @@
-# Contentful backup action
+# Contentful environment backup action
 
 This action can be used to create periodic "backup" copies of a Contentful `master` environment. Such backups can be leveraged to quickly roll back to previous stable content, should the need arise, or for testing various migrations before committing to `master`. 
 
@@ -41,7 +41,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Back up Contentful environment
-              uses: ./
+              uses: Jim-Horn/contentful-environment-backup@main
               id: backup
               with:
                   contentful-content-management-token: ${{secrets.CONTENTFUL_CONTENT_MANAGEMENT_TOKEN}}

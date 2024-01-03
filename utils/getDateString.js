@@ -10,8 +10,6 @@ function getDateString(theDate) {
     returnString += pad(theDate.getHours());
     returnString += "-";
     returnString += pad(theDate.getMinutes());
-    returnString += "-";
-    returnString += pad(theDate.getSeconds());
 
     return returnString;
 
