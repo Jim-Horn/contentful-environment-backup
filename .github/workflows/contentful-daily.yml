@@ -16,6 +16,6 @@ jobs:
               id: backup
               with:
                   contentful-content-management-token: ${{secrets.CONTENTFUL_CONTENT_MANAGEMENT_TOKEN}}
-                  contentful-space-id: "16nm6vz43ids"
+                  contentful-space-id: "bk7p92rcqlz3"
                   backup-name-prefix: "daily"
                   delete-name-prefix: "daily"
