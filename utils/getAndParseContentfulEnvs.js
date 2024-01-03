@@ -2,7 +2,7 @@
 import fs from "fs";
 import executeCommand from "./executeCommand.js";
 
-const DATA_DIR = "data";
+const DATA_DIR = "/data";
 
 function getAndParseContentfulEnvs(accessString) {
     getContentfulEnvs();
