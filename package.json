@@ -1,6 +1,6 @@
 {
     "type": "module",
-    "name": "contentful-env-backup",
+    "name": "contentful-environmen-backup",
     "description": "This action deletes and creates Contentful environment backups",
     "version": "0.9.2",
     "main": "index.js",
@@ -9,15 +9,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Jim-Horn/contentful-env-backup.git"
+        "url": "https://github.com/Jim-Horn/contentful-environment-backup.git"
     },
     "keywords": [],
     "author": "Jim Horn",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Jim-Horn/contentful-env-backup/issues"
+        "url": "https://github.com/Jim-Horn/contentful-environment-backup/issues"
     },
-    "homepage": "https://github.com/Jim-Horn/contentful-env-backup#readme",
+    "homepage": "https://github.com/Jim-Horn/contentful-environment-backup#readme",
     "devDependencies": {
         "jest": "^29.7.0"
     }
