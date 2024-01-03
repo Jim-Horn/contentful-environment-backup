@@ -1,5 +1,8 @@
 name: 'Contentful backup'
 description: 'Creates a new backup of Contentful content'
+branding:
+  icon: 'copy'
+  color: 'green'
 inputs:
   contentful-content-management-token:
     description: The Contentful management token secret
