@@ -8,6 +8,8 @@ RUN chmod +x index.js
 COPY /utils /utils
 RUN chmod +x utils
 
+COPY /data /data
+
 RUN yarn global add contentful-cli@1.16.28
 
 ENTRYPOINT ["/index.js"]
