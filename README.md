@@ -24,6 +24,7 @@ _none_
 
 The following example is run on a schedule (See [crontab guru](https://crontab.guru/#0_18_*_*_1-5) for examples), but can also be triggered by a user at any time.
 
+See the `/.github/workflows/contentful_...` files for examples of how to use this action.
 
 ```js
 name: Contentful - weekday backup
